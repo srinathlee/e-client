@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round&display=swap');
+*{
+    font-family: 'Crete Round', serif;
+}
+input{
+    background-color: transparent;
+    color:white;
+}
+.register-bg-container{
+    /* background-color: #cbcbcb; */
+    background-image: url("../assets//reg1.jpg");
+    background-size: cover;
+    height:100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.register-card-container{
+    padding:1em 0;
+    height:70vh;
+    width:70%;
+    background-color:rgba(0,0,0,0.5);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 1px 1px 10px 5px black;
+    backdrop-filter:blur(2px)
+
+}
+.register-banner{
+    width:50%;
+}
+.error{
+    margin: 0px;
+    padding:0px;
+    font-size: 0.5rem;
+    color:red;
+    margin-left: 2rem;
+}
+.register-form{
+    width:40%;
+    display: flex;
+    flex-direction: column;
+}
+.logo-container input{
+display: none;
+}
+.logo-container img{
+    width:22%;
+    margin-bottom: 1em;
+}
+
+.logo-container{
+    text-align: center;
+}
+.widget{
+    width:100%;
+    border-bottom: 1px solid #989898;
+    /* margin-bottom: 1.2em; */
+    display: flex;
+    align-items: center;
+    overflow-wrap: wrap;
+    
+   }
+   .outer-widget{
+    margin-bottom: 1rem;
+   }
+.widget .widget-icon{
+    font-size: 20px;
+    color:#989898;
+    margin-right: .3em;
+    width:10%;
+}
+.input-box{
+    width:90%;
+    border: none; 
+    font-size: 1rem;
+    height: 40px;
+   outline: none; 
+}
+.prime-box{
+    display: flex;
+    align-items: center;
+}
+.primebox{
+    height:19px;
+    width:19px;
+    margin:.5em;
+}
+.prime-box{
+
+    margin-bottom: 1em;
+}
+.register-btn{
+    height:40px;
+    width:100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: white;
+    background-color:red;
+    font-weight: bold;
+
+}
+.prime{
+    color:red;
+    text-decoration: none;
+    font-weight: bold;
+}
+.link{
+    color:red;
+    text-decoration: none;
+}
+
+.haveacc-para{
+    font-size: .8rem;
+    text-align: center;
+    color:white;
+}
+
+@media (max-width:700px) {
+    .logo-container img{
+        width:35%;
+    }
+    
+    .register-card-container{
+    flex-direction: column;
+    }
+    .register-banner{
+        display: none;
+       
+    }
+    .register-form{
+        width:90%;
+    }
+}
