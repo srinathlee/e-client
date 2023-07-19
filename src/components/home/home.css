@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round&display=swap');
+*{
+    font-family: "roboto";
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+.home-container{
+    width:100%;
+    padding:1rem 2rem;
+    max-width: 1300px;
+    margin:0 auto;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   height:93vh;
+
+}
+.home-desktop-img{
+    width:45%;
+}
+.home-content{
+    width:45%;
+    
+}
+.home-heading{
+    font-size: 3rem;
+    margin-bottom: 1em;
+}
+.home-description{
+    font-size: 1.2rem;
+    margin-bottom: .5em;
+    font-family: "roboto";
+    color:gray;
+}
+.shop-now-button a{
+    width:100%;
+    height:100%;
+    background-color: black;
+    color:white;
+    text-decoration: none;
+}
+
+.shop-now-button{
+    background-color: black;
+    border-radius: 5px;
+    color:white;
+    padding:1em;
+    outline: none;
+    cursor: pointer;
+    border:none;
+    margin-top: 2em;
+    transition: all 200ms ease;
+}
+.shop-now-button:active{
+    scale: 0.92;
+}
+
+
+
+.similar-product-bg-container{
+    width:100%;
+    padding:1rem 2rem;
+    max-width: 1300px;
+    margin:0 auto;
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between; */
+
+}
+.similar-products-container{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+   
+
+}
+
+/* similar card  */
+
+.similar-card{
+    scale: 1;
+    width:200px;
+    overflow: hidden;
+    /* background-color: gray; */
+    border-radius: 10px 10px 0px 0px;
+    transition: all 200ms ease;
+
+}
+.similar-card:hover{
+    scale: 1.02;
+}
+.similar-card-img{
+    width:100%;
+}
+.similar-card-description{
+   display: flex;
+   flex-direction: column;
+   gap:15px;
+   padding:15px 0px;
+}
+.similar-card-name{
+    font-size: 1.2rem;
+}
+.similar-company{
+    font-size: 1rem;
+    font-weight: none;
+}
+.similar-price-rating{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+
+}
+.rating{
+    font-size: 1rem;
+    padding-bottom: 2px;
+}
+.star{
+    font-size: 1rem;
+}
+.rating-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap:4px;
+    background-color: black;
+    color:white;
+    padding:0px 6px;
+    border-radius: 5px;
+}
+.recomendations-heading{
+    font-size: 1.5rem;
+    margin-bottom: 1em;
+}
+
+
+@media (max-width:720px){
+    .home-heading{
+        font-size: 2rem;}
+   
+    .home-container{
+        flex-direction: column;
+      
+    }
+    .home-desktop-img{
+        width:100%;
+        height:50vh
+    }
+    .home-content{
+        width:100%;  
+    }
+
+    .similar-products-container{
+       flex-direction: column;
+        align-items: center;
+        }
+        .similar-card{
+            width:100%;
+        }
+}
