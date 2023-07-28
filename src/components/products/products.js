@@ -1,7 +1,5 @@
 import Header from '../header/header.js'
 import NorProducts from '../normalproducts/index.js'
-import {ToastContainer,toast} from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css';
 import './products.css'
 
 const Products =()=>{
@@ -12,9 +10,7 @@ const Products =()=>{
         <Header/>
 
         <div className='products-bg-container'>
-        {
-        NorProducts()
-        }
+        <NorProducts/>
         </div>
         
         

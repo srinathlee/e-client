@@ -44,7 +44,7 @@ const Header=()=>{
 
           <div className='mob-bars-profile'>
           <Link  className=' nav-link' to="/profile">
-              <div className='nav-item img'> <img className='profile-img' src={profile}/></div>
+              <div className='nav-item img'> <img alt="profile-img" className='profile-img' src={profile}/></div>
             </Link>
 
           <div className='bars' onClick={()=>setMenu(!menu)}>

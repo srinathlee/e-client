@@ -1,7 +1,7 @@
 import {useState,useEffect} from 'react'
 import { Link,useNavigate } from 'react-router-dom'
 import * as helpers from '../../helper/helper.js'
-import banner from '../assets/reg3.png'
+import banner from '../assets/loginbg.png'
 import profile from '../assets/registerprofile.png'
 import AOS from 'aos'
 import { ToastContainer,toast } from 'react-toastify'
@@ -51,6 +51,7 @@ const Login=()=>{
         const details={email,password}
         const result=await helpers.Login(details)
         if(result.status===200){
+          console.log("login jwt",result.data.jwt_token)
           Cookies.set("jwtToken",result.data.jwt_token)
           // ___________________________________________
           toast.success("loing successful")
@@ -59,13 +60,17 @@ const Login=()=>{
            }, 1000);
 
         }
+        else{
+          toast.error(result.response.data.error)
+        }
+
          } 
       }
 
         const {email,password}=state
         return(
             <div className='login-bg-container'>
-                <ToastContainer/>
+                <ToastContainer theme='black'/>
                 <div className='login-card-container'>
                     <img data-aos="fade-right" className='login-banner' src={banner}/>
 
@@ -85,7 +90,7 @@ const Login=()=>{
                           <input name="password"  onChange={setData} onBlur={onBlur}  className='login-input-box' type="password" placeholder='enter your password'/>
                         </div>
                         <button className='login-register-btn'>Login</button>
-                        <p className='login-haveacc-para'>Dosen`t have an account ?<Link to="/register"><span className='login-prime'>SignIn</span></Link></p>
+                        <p className='login-haveacc-para'>Dosen`t have an account ?<Link  to="/register"><span className='login-prime'> SignUp</span></Link></p>
 
                     </form>
 

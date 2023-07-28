@@ -15,7 +15,8 @@
    flex-direction: row;
    justify-content: space-between;
    align-items: center;
-   height:93vh;
+   min-height:93vh;
+   
 
 }
 .home-desktop-img{
@@ -146,6 +147,7 @@
    
     .home-container{
         flex-direction: column;
+       
       
     }
     .home-desktop-img{

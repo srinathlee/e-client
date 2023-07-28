@@ -4,6 +4,7 @@ import Register from './components/register/register.js'
 import Login from './components/login/login.js'
 import Products from './components/products/products.js'
 import ProtectedRoute from './middlewares/auth.js'
+import Pagenotfound from './components/pagenotfound/index.js'
 
 
 
@@ -12,7 +13,7 @@ function App() {
 
   const router=createBrowserRouter([
     {path:"/",
-   element:<Home/>
+   element:<ProtectedRoute><Home/></ProtectedRoute>
     },
 
   {path:"/register",
@@ -25,6 +26,10 @@ function App() {
    {
     path:"/products",
     element:<ProtectedRoute><Products/></ProtectedRoute>
+   },
+   {
+    path:"*",
+    element:<Pagenotfound/>
    }
   ])
   return (

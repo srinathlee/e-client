@@ -1,7 +1,7 @@
 import {useState,useEffect} from 'react'
 import {Link,useNavigate} from 'react-router-dom'
-import banner from '../assets/reg3.png'
-import profile from '../assets/registerprofile.png'
+import banner from '../assets/loginbg.png'
+import profile1 from '../assets/registerprofile.png'
 import AOS from 'aos'
 import {AiOutlineUser,AiOutlineMail} from 'react-icons/ai'
 import {RiLockPasswordLine} from 'react-icons/ri'
@@ -22,7 +22,7 @@ const Register=()=>{
         password:"",
         conpassword:"",
         profile:"",
-        primemember:false,
+        primeuser:false,
         errors:{}
 
     })
@@ -30,6 +30,26 @@ const Register=()=>{
     useEffect(()=>{
         AOS.init({duration:1000})
     })
+
+    const convertBase64=(file)=>{
+      return new Promise((resolve,reject)=>{
+       const filereader=new FileReader()
+       filereader.readAsDataURL(file)
+       filereader.onload=()=>{
+           resolve(filereader.result)
+       }
+       filereader.onerror=(e)=>{
+           reject(e)
+       }
+      })
+   
+   }
+
+    const getFile=async(event)=>{
+      const file=event.target.files[0]
+      const base64file=await convertBase64(file)
+      setState((prevState)=>({...prevState,profile:base64file}))
+    }
 
     const setData=(event)=>{
        setState((prevState)=>({...prevState,[event.target.name]:event.target.value}))
@@ -53,15 +73,17 @@ const Register=()=>{
 
     const onSubmit=async(event)=>{
       event.preventDefault()
-      const {name,email,password,conpassword,errors,primemember}=state
-      console.log(name,email,password,conpassword,errors)
+      const {name,email,password,conpassword,profile,primeuser}=state
+      // console.log(name,email,password,conpassword,primeuser)
       if(name==="" || email==="" || password==="")
       toast.error("complete form details")
       else if(password!==conpassword)
       toast.error("password should match")
       else {
-      const details={name,email,password,primemember,profile:"s"}
+      const details={name,email,password,primeuser,profile}
+      // console.log("register component on submit details",details)
       const result= await helpers.Register(details)
+      // console.log(result)
       if(result.status==200){
         toast.success("user registered successfully")
        setTimeout(() => {
@@ -87,7 +109,7 @@ const Register=()=>{
 
 
 
-      const {name,email,password,conpassword,errors}=state
+      const {name,email,password,conpassword,profile}=state
    
         return(
             <div className='register-bg-container'>
@@ -98,8 +120,8 @@ const Register=()=>{
                     <form onSubmit={onSubmit} data-aos="fade-left" className='register-form'>
 
                         <div className='logo-container'>
-                         <label htmlFor="register-img"><img alt="profile" src={profile}/></label>
-                          <input className='register-img-input' id="register-img" type="file" />
+                         <label htmlFor="register-img"><img className='profile-image' alt="profile" src={profile||profile1}/></label>
+                          <input onChange={getFile} className='register-img-input' id="register-img" type="file" />
                         </div>
                         <div className='outer-widget'>
                         <div className='widget'>
@@ -135,12 +157,12 @@ const Register=()=>{
                           {/* {errors.conpassword && <p className='error'>{errors.conpassword}</p>} */}
                         </div>
                         <div  className='prime-box'>
-                          <input name="primemember" onClick={setPrime}  className='primebox' type="checkbox" />
+                          <input name="primeuser" onClick={setPrime}  className='primebox' type="checkbox" />
                           <p className='haveacc-para'>Add <span className='prime'>prime</span> membership</p>
 
                         </div>
                         <button className='register-btn'>Register</button>
-                        <p className='haveacc-para'>Already have an account ?<Link className='link'  to="/login"><span>SignIn</span></Link></p>
+                        <p className='haveacc-para'>Already have an account ?<Link className='link'  to="/login"><span> SignIn</span></Link></p>
 
                     </form>
 

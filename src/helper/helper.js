@@ -1,10 +1,11 @@
 import axios from 'axios'
 import Cookies from 'js-cookie'
 axios.defaults.baseURL="https://e-server-uoze.onrender.com"
+// axios.defaults.baseURL="http://localhost:5080"
 
 
 export const Register=async(details)=>{
-    // console.log(process.env.SERVER_URL)
+    console.log("helper details",details)
   
     try{
         const result=await axios.post("/register",details)
@@ -34,6 +35,9 @@ export const Login=async(details)=>{
 export const Products=async ()=>{
    try{
        const jwtToken=Cookies.get("jwtToken")
+       console.log("jwtToken________________________") 
+       console.log(jwtToken)
+
       const result =await axios.get("/",{headers:{
         'Content-Type':"appliation/json",
         "Accept":"application/json",

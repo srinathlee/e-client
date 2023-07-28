@@ -1,0 +1,27 @@
+.pagenot-bg-container{
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.pagenot-button{
+    background-color: black;
+    border-radius: 5px;
+    color:white;
+    padding:1em;
+    outline: none;
+    cursor: pointer;
+    border:none;
+    margin-top: 2em;
+    transition: all 200ms ease;
+}
+.pagenot-img{
+    width:50%;
+}
+
+.pagenot-button:active{
+    scale: 0.92;
+}
+
+
