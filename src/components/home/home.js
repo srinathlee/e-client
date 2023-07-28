@@ -42,7 +42,7 @@ const Home=()=>{
             <h1 className='recomendations-heading'>Top Recomendations for you</h1>
            <div className='similar-products-container'>
                 <div className='similar-card'>
-                 <img className='similar-card-img' src={shirt}/>
+                 <img alt="card-image" className='similar-card-img' src={shirt}/>
                  <div className='similar-card-description'>
                   <h1 className='similar-card-name'>Shirt</h1>
                   <p className='similar-company'>Livies</p>
@@ -59,7 +59,7 @@ const Home=()=>{
                 </div>
 
                 <div className='similar-card'>
-                 <img className='similar-card-img' src={tshirt}/>
+                 <img alt="card-img-1" className='similar-card-img' src={tshirt}/>
                  <div className='similar-card-description'>
                   <h1 className='similar-card-name'>T-Shirt</h1>
                   <p className='similar-company'>Livies</p>
@@ -76,7 +76,7 @@ const Home=()=>{
                 </div>
 
                 <div className='similar-card'>
-                 <img className='similar-card-img' src={spets}/>
+                 <img alt="card-img-2"  className='similar-card-img' src={spets}/>
                  <div className='similar-card-description'>
                   <h1 className='similar-card-name'>Spets</h1>
                   <p className='similar-company'>Gucci</p>
@@ -93,7 +93,7 @@ const Home=()=>{
                 </div>
 
                 <div className='similar-card'>
-                 <img className='similar-card-img' src={handcraft}/>
+                 <img  alt="card-img-3"  className='similar-card-img' src={handcraft}/>
                  <div className='similar-card-description'>
                   <h1 className='similar-card-name'>Handcraft</h1>
                   <p className='similar-company'>Asha</p>

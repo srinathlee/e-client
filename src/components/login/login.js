@@ -6,7 +6,7 @@ import profile from '../assets/registerprofile.png'
 import AOS from 'aos'
 import { ToastContainer,toast } from 'react-toastify'
 import 'aos/dist/aos.css'
-import {AiOutlineUser,AiOutlineMail} from 'react-icons/ai'
+import {AiOutlineMail} from 'react-icons/ai'
 import {RiLockPasswordLine} from 'react-icons/ri'
 import Cookies from 'js-cookie'
 import './login.css'
@@ -31,7 +31,7 @@ const Login=()=>{
      }
      const onBlur=(e)=>{
         const {errors}=state
-          if(e.target.value==""){
+          if(e.target.value===""){
             setState((prevState)=>({...prevState,errors:{...prevState.errors,[e.target.name]:`*provide a valid ${e.target.name}`}}))
             toast.error(`enter a valid ${e.target.name}`)
   
@@ -43,9 +43,11 @@ const Login=()=>{
           }
       }
       const onSubmit=async(event)=>{
+      
         event.preventDefault()
         const {email,password,errors}=state
-        if(email=="" || password=="")
+        console.log(errors)
+        if(email==="" || password==="")
         toast.error("complete form details")
         else {
         const details={email,password}
@@ -72,12 +74,12 @@ const Login=()=>{
             <div className='login-bg-container'>
                 <ToastContainer theme='black'/>
                 <div className='login-card-container'>
-                    <img data-aos="fade-right" className='login-banner' src={banner}/>
+                    <img alt="banner-img" data-aos="fade-right" className='login-banner' src={banner}/>
 
                     <form  onSubmit={onSubmit} data-aos="fade-left" className='login-form'>
 
                         <div className='login-logo-container'>
-                         <label htmlFor="login-img"><img src={profile}/></label>
+                         <label htmlFor="login-img"><img alt="prifile" src={profile}/></label>
                           <input className='login-img-input' id="login-img" type="file" />
                         </div>
    
