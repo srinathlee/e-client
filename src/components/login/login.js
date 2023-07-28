@@ -42,13 +42,15 @@ const Login=()=>{
             setState((prevState)=>({...prevState,errors:errs}))
           }
       }
-      const onSubmit=async(event)=>{
-      
+      const onSubmit=async(event)=>{      
         event.preventDefault()
+        const id = toast.loading("Please wait...")
         const {email,password,errors}=state
         console.log(errors)
         if(email==="" || password==="")
-        toast.error("Complete form details")
+        // toast.error("Complete form details")
+        toast.update(id, { render: "Complete form details", type: "error", isLoading: false , autoClose:2000});
+
         else {
         const details={email,password}
         const result=await helpers.Login(details)
@@ -56,14 +58,18 @@ const Login=()=>{
           console.log("login jwt",result.data.jwt_token)
           Cookies.set("jwtToken",result.data.jwt_token)
           // ___________________________________________
-          toast.success("Loing successful")
+          // toast.success("Loing successful")
+        toast.update(id, { render: "Login successful", type: "success", isLoading: false,autoClose:2000 });
+
           setTimeout(() => {
             navigate("/")
            }, 1000);
 
         }
         else{
-          toast.error(result.response.data.error)
+          // toast.error(result.response.data.error)
+        toast.update(id, { render: `${result.response.data.error}`, type: "error", isLoading: false, autoClose:2000 });
+
         }
 
          } 
@@ -72,7 +78,7 @@ const Login=()=>{
         const {email,password}=state
         return(
             <div className='login-bg-container'>
-                <ToastContainer theme='black'/>
+                <ToastContainer  theme='black'/>
                 <div className='login-card-container'>
                     <img alt="banner-img" data-aos="fade-right" className='login-banner' src={banner}/>
 
