@@ -22,8 +22,9 @@ input{
     justify-content: center;
     align-items: center;
 }
+
 .profile-image{
-    height:150px;
+    height:100px;
     width:150px;
     border-radius: 80px;
 }
@@ -109,6 +110,7 @@ display: none;
 .register-btn{
     height:40px;
     width:100%;
+    cursor: pointer;
     border: none;
     outline: none;
     border-radius: 5px;
@@ -147,5 +149,8 @@ display: none;
     }
     .register-form{
         width:90%;
+    }
+    .register-card-container{
+        width:85%;
     }
 }

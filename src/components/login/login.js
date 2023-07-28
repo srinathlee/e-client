@@ -48,7 +48,7 @@ const Login=()=>{
         const {email,password,errors}=state
         console.log(errors)
         if(email==="" || password==="")
-        toast.error("complete form details")
+        toast.error("Complete form details")
         else {
         const details={email,password}
         const result=await helpers.Login(details)
@@ -56,7 +56,7 @@ const Login=()=>{
           console.log("login jwt",result.data.jwt_token)
           Cookies.set("jwtToken",result.data.jwt_token)
           // ___________________________________________
-          toast.success("loing successful")
+          toast.success("Loing successful")
           setTimeout(() => {
             navigate("/")
            }, 1000);
@@ -85,11 +85,11 @@ const Login=()=>{
    
                         <div  className='login-widget'>
                           <AiOutlineMail className='login-widget-icon'/>
-                          <input name="email" onChange={setData} onBlur={onBlur} className='login-input-box' type="text" placeholder='enter your email'/>
+                          <input name="email" onChange={setData} onBlur={onBlur} className='login-input-box' type="email" placeholder='Enter your email'/>
                         </div>
                         <div className='login-widget'>
                           <RiLockPasswordLine className='login-widget-icon'/>
-                          <input name="password"  onChange={setData} onBlur={onBlur}  className='login-input-box' type="password" placeholder='enter your password'/>
+                          <input name="password"  onChange={setData} onBlur={onBlur}  className='login-input-box' type="password" placeholder='Enter your password'/>
                         </div>
                         <button className='login-register-btn'>Login</button>
                         <p className='login-haveacc-para'>Dosen`t have an account ?<Link  to="/register"><span className='login-prime'> SignUp</span></Link></p>

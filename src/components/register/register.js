@@ -74,7 +74,7 @@ const Register=()=>{
     const onSubmit=async(event)=>{
       event.preventDefault()
       const {name,email,password,conpassword,profile,primeuser}=state
-      // console.log(name,email,password,conpassword,primeuser)
+      // console.log(name,mail,password,conpassword,primeuser)
       if(name==="" || email==="" || password==="")
       toast.error("complete form details")
       else if(password!==conpassword)
@@ -136,9 +136,9 @@ const Register=()=>{
                         <div  className='widget'>
                       
                           <i className="fa-regular fa-envelope widget-icon"></i>
-                          <input onBlur={onBlur}  value={email} onChange={setData}  name="email"  className="input-box" type="text" placeholder='Enter your email'/>
+                          <input onBlur={onBlur}  value={email} onChange={setData}  name="email"  className="input-box" type="email" placeholder='Enter your email'/>
                         </div>
-                        {/* {errors.email && <p className='error'>{errors.email}</p>} */}
+                        {/* {errors.mail && <p className='error'>{errors.mail}</p>} */}
                         </div>
                         
                          <div className='outer-widget'>
