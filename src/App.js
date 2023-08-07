@@ -5,6 +5,9 @@ import Login from './components/login/login.js'
 import Products from './components/products/products.js'
 import ProtectedRoute from './middlewares/auth.js'
 import Pagenotfound from './components/pagenotfound/index.js'
+import CardDetailView from './components/cardDetailView/index.js'
+import ProductItemDetails from './components/cardDetailView/index.js'
+import Profile from './components/profile/index.js'
 
 
 
@@ -27,6 +30,18 @@ function App() {
     path:"/products",
     element:<ProtectedRoute><Products/></ProtectedRoute>
    },
+   {
+     path:"/productDetail/:id",
+     element:<CardDetailView/>
+   },   
+  //  {
+  //   path:"/contact",
+  //   element:<Profile/>
+  // }, 
+  {
+    path:"/profile",
+    element:<Profile/>
+  },
    {
     path:"*",
     element:<Pagenotfound/>

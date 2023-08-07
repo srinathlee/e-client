@@ -22,7 +22,8 @@ input{
     align-items: center;
 }
 .login-card-container{
-    height:70vh;
+    /* height:70vh; */
+    padding:10px 0px;
     width:70%;
     background-color:rgba(0,0,0,0.5);
     border-radius: 5px;

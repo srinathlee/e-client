@@ -1,11 +1,13 @@
 import {AiFillStar} from 'react-icons/ai'
+import { Link } from 'react-router-dom'
 import './index.css'
 
 
 const ProductCard=(props)=>{
-   const {rating,imageUrl,price,brand,title}=props.each
+   const {rating,imageUrl,price,brand,title,id}=props.each
 
     return(
+        <Link to={`/productDetail/${id}`} className='product-card-link'>
         <div className='product-card'>
                  <img className='product-card-img' src={imageUrl}/>
             <div className='product-card-description'>
@@ -20,6 +22,7 @@ const ProductCard=(props)=>{
                 </div>
             </div>
         </div>
+        </Link>
     )
 }
 

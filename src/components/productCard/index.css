@@ -4,6 +4,10 @@
     box-sizing:border-box;
 }
 
+.product-card-link{
+    color:black;
+}
+
 .product-card{
     scale: 1;
     width:280px;

@@ -9,11 +9,14 @@ import 'aos/dist/aos.css'
 import {AiOutlineMail} from 'react-icons/ai'
 import {RiLockPasswordLine} from 'react-icons/ri'
 import Cookies from 'js-cookie'
+import { appStore } from '../../store/store.js'
 import './login.css'
 import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login=()=>{
+  const getUser=appStore((state)=>state.getUser)
+  const loggedUser=appStore((state)=>state.loggedUser)
   const navigate=useNavigate()
     const[state,setState]=useState({
         email:"",
@@ -23,7 +26,6 @@ const Login=()=>{
 
     useEffect(()=>{
       AOS.init({duration:1000})
-      console.log(process.env.serverUrlloing)
   })
 
     const setData=(event)=>{
@@ -46,16 +48,15 @@ const Login=()=>{
         event.preventDefault()
         const id = toast.loading("Please wait...")
         const {email,password,errors}=state
-        console.log(errors)
         if(email==="" || password==="")
-        // toast.error("Complete form details")
         toast.update(id, { render: "Complete form details", type: "error", isLoading: false , autoClose:2000});
 
         else {
         const details={email,password}
         const result=await helpers.Login(details)
         if(result.status===200){
-          console.log("login jwt",result.data.jwt_token)
+          getUser(email)
+          console.log(email,"zustand______",loggedUser)
           Cookies.set("jwtToken",result.data.jwt_token)
           // ___________________________________________
           // toast.success("Loing successful")
