@@ -1,0 +1,21 @@
+.profile-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.image-container{
+    border-radius: 5px;
+}
+
+.profile-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 11px 2px gray;
+    
+}

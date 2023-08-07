@@ -17,11 +17,13 @@ const Profile=()=>{
       }
 
    return(
-   <>
-    <div><img src={profile?.profile||prof}/></div>
+   <div className='profile-container'>
+    <div className='profile-card'>
+    <div ><img  className='image-container'src={profile?.profile||prof}/></div>
     <h1>{profile?.name}</h1>
     <h1>{profile?.email}</h1>
-   </>
+   </div>
+   </div>
 
    )
 }
