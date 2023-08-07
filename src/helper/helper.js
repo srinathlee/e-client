@@ -1,7 +1,7 @@
 import axios from 'axios'
 import Cookies from 'js-cookie'
-// axios.defaults.baseURL="https://e-server-uoze.onrender.com"
-axios.defaults.baseURL="http://localhost:5080"
+axios.defaults.baseURL="https://e-server-uoze.onrender.com"
+// axios.defaults.baseURL="http://localhost:5080"
 
 
 export const Register=async(details)=>{
