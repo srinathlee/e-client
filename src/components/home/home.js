@@ -32,9 +32,7 @@ const Home=()=>{
                   </button>
                   </a>
             
-             </div>
-          
-           
+                  </div>           
               </div>
 
 
