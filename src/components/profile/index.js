@@ -2,6 +2,8 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { appStore } from '../../store/store'
 import * as helpers from '../../helper/helper.js'
+import Header from '../header/header.js'
+
 import prof from '../assets/profile1.png'
 import './index.css'
 
@@ -17,7 +19,10 @@ const Profile=()=>{
       }
 
    return(
+<>
+<Header/>
    <div className='profile-container'>
+
     <div className='profile-card'>
     <div ><img  className='image-container'src={profile?.profile||prof}/></div>
     <h1>{profile?.name}</h1>
@@ -25,6 +30,7 @@ const Profile=()=>{
    </div>
    </div>
 
+   </>
    )
 }
 
