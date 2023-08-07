@@ -8,6 +8,8 @@
 }
 .image-container{
     border-radius: 5px;
+    width:200px;
+    height:150px;
 }
 
 .profile-card{
@@ -16,6 +18,8 @@
     justify-content: center;
     align-items: center;
     padding:20px;
+    max-width:400px;
+    width:90%;
     border-radius: 5px;
     box-shadow: 2px 2px 11px 2px gray;
     
