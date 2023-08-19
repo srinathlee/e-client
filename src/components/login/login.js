@@ -79,7 +79,7 @@ const Login=()=>{
         const {email,password}=state
         return(
             <div className='login-bg-container'>
-                <ToastContainer  theme='black'/>
+                <ToastContainer />
                 <div className='login-card-container'>
                     <img alt="banner-img" data-aos="fade-right" className='login-banner' src={banner}/>
 

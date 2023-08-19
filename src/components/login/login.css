@@ -13,7 +13,7 @@ input{
 }
 .login-bg-container{
     /* background-image: url("../assets//bg1.jpg"); */
-    background-image: radial-gradient(white,black);
+    /* background-image: radial-gradient(white,black); */
     background-size: cover;
     height:100vh;
     display: flex;
@@ -26,11 +26,12 @@ input{
     padding:10px 0px;
     width:70%;
     background-color:rgba(0,0,0,0.5);
+    /* background-color: whitesmoke; */
     border-radius: 5px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    box-shadow: 1px 1px 10px 5px black;
+    box-shadow: 1px 1px 5px 3px black;
 
     align-items: center;
 }

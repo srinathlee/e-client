@@ -13,7 +13,7 @@ input{
 .register-bg-container{
     /* background-color: #cbcbcb; */
     /* background-image: url("../assets//reg1.jpg"); */
-    background-image: radial-gradient(white,black);
+    /* background-image: radial-gradient(white,black); */
 
     background-size: cover;
     height:100vh;
@@ -39,7 +39,7 @@ input{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    box-shadow: 1px 1px 10px 5px black;
+    box-shadow: 1px 1px 7px 3px black;
     backdrop-filter:blur(2px)
 
 }

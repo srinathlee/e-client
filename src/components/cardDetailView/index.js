@@ -5,6 +5,7 @@ import { useEffect ,useState} from 'react'
 import {useParams,Link} from 'react-router-dom'
 import axios from 'axios'
 import * as helper from '../../helper/helper.js'
+import {appStore} from '../../store/store'
 import './index.css'
 
 const apiStatusConstants = {
@@ -15,30 +16,31 @@ const apiStatusConstants = {
 }
 
 const ProductItemDetails =()=> {
+  const {addCartItem,cart,itemIncrement}=appStore((state)=>state)
     const {id}=useParams() 
+
     const [state,setState] = useState({
+    quantity:0,
     productData: {},
     apiStatus: apiStatusConstants.initial
     })
-
+     
     useEffect(()=>{GetProductData()},[])
 
 
     const GetProductData = async () => {
     
-      setState({apiStatus:apiStatusConstants.inProgress})
+      setState({...state,apiStatus:apiStatusConstants.inProgress})
       const response=await helper.getProduct(id)
-      console.log(response)
-    if (response.status==200) {
+      if (response.status===200) {
       const fetchedData = await response.data
-      console.log(fetchedData)
-      setState({
+      setState({...state,
         productData: fetchedData.data[0],
         apiStatus: apiStatusConstants.success,
       })
     }
     if (response.status >299) {
-      setState({
+      setState({...state,
         apiStatus: apiStatusConstants.failure,
       })
     }
@@ -65,21 +67,44 @@ const ProductItemDetails =()=> {
     </div>
   )
 
-//   onDecrementQuantity = () => {
-//     const {quantity} = this.state
-//     if (quantity > 1) {
-//       this.setState(prevState => ({quantity: prevState.quantity - 1}))
-//     }
-//   }
+  const onDecrementQuantity = () => {
+    const {quantity} = state
+    if (quantity >= 1) {
+      setState(prevState => ({...state,quantity: prevState.quantity - 1}))
+    }
+  }
 
-//   onIncrementQuantity = () => {
-//     setState(prevState => ({quantity: prevState.quantity + 1}))
-//   }
+  const onIncrementQuantity = () => {
+    setState(prevState => ({...state,quantity: prevState.quantity + 1}))
+    console.log(state.quantity)
+    
+  }
+  
+  const addToCart=(event)=>{
+    const {quantity}=state
+    if(quantity==0){
+      alert("select quantity")
+    }
+    else{
+    const {id,imageUrl,title,brand,price}=state.productData
+    const itemExist=cart.find((ele)=>ele.id===id)
+    if(itemExist){
+      console.log("incremented")
+      itemIncrement(id)
+    }
+    else{
+     const cartItem={
+     id,imageUrl,title,brand,quantity,price,imageUrl
+    }
+    addCartItem(cartItem)
+  }
+}
+  }
 
 
 
  const renderProductDetailsView = () =>  {
-        const {productData} =state
+        const {productData,quantity} =state
         const {
           brand,
           imageUrl,
@@ -115,11 +140,11 @@ const ProductItemDetails =()=> {
                   <p className="value">{brand}</p>
                 </div>
                 <hr className="horizontal-line" />
-                {/* <div className="quantity-container">
+                <div className="quantity-container">
                   <button
                     type="button"
                     className="quantity-controller-button"
-                    onClick={this.onDecrementQuantity}
+                    onClick={onDecrementQuantity}
                   >
                     <BsDashSquare className="quantity-controller-icon" />
                   </button>
@@ -127,12 +152,12 @@ const ProductItemDetails =()=> {
                   <button
                     type="button"
                     className="quantity-controller-button"
-                    onClick={this.onIncrementQuantity}
+                    onClick={onIncrementQuantity}
                   >
                     <BsPlusSquare className="quantity-controller-icon" />
                   </button>
-                </div> */}
-                <button
+                </div>
+                <button onClick={addToCart}
                   type="button"
                   className="button add-to-cart-btn"
                   // onClick={onClickAddToCart}

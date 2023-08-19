@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round&display=swap');
+*{
+    font-family: 'Crete Round', serif;
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+.cart-bg-container{
+    width:100%;
+    max-width: 1300px;
+    margin:0 auto;
+    padding: 0 2rem;
+    
+}
+.cart-main-bg{
+    margin-top: 40px;
+}
+
+.cart-main-heading{
+    font-size: 2em;
+    /* font-family: ; */
+}
+
+.cart-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.cart-price-delete{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* align-items: flex-end; */
+    gap: 25px;
+}
+.cart-body{
+    margin-top:40px;
+}
+.cart-clear-btn{
+    background-color: black;
+    border-radius: 5px;
+    color:white;
+    padding:1em;
+    outline: none;
+    cursor: pointer;
+    border:none;
+    transition: all 200ms ease;
+}
+.total-amount{
+    font-family: roboto;
+    font-size: 1.5rem;
+}
+.cost{
+    font-family: roboto;
+    font-size: 1.7rem;
+}
+.cart-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}

@@ -113,7 +113,7 @@ const Register=()=>{
    
         return(
             <div className='register-bg-container'>
-               <ToastContainer/>
+               <ToastContainer theme="light"/>
                 <div className='register-card-container'>
                     <img alt="img" data-aos="fade-right" className='register-banner' src={banner}/>
 

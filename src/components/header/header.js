@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './header.css'
-import {FaBars} from 'react-icons/fa'
+import {FaBars,FaShoppingCart} from 'react-icons/fa'
 import {RxCross2} from "react-icons/rx"
 import {SiShopify} from 'react-icons/si'
 import profile from '../assets/profile1.png'
@@ -37,6 +37,9 @@ const Header=()=>{
             <Link  className='nav-link' to="/login">
             <li  onClick={Logout} className='nav-item'>Logout</li>
             </Link>
+            <Link  className='nav-link' to="/cart">
+            <li className='nav-item'><FaShoppingCart/></li>
+            </Link>
             <Link className='nav-link' to="/profile">
             <li className='img'> <img alt="img" className='profile-img' src={profile}/></li>
             </Link>
@@ -63,6 +66,9 @@ const Header=()=>{
             </Link>
             <Link  className='nav-link' to="/contact">
               <div className='nav-item'>Contact</div>
+            </Link>   
+            <Link  className='nav-link' to="/cart">
+              <div className='nav-item'><FaShoppingCart/></div>
             </Link>    
             <Link  className='nav-link' to="/login">
               <div onClick={Logout} className='nav-item'>Logout</div>

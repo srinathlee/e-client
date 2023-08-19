@@ -8,6 +8,7 @@ import Pagenotfound from './components/pagenotfound/index.js'
 import CardDetailView from './components/cardDetailView/index.js'
 import ProductItemDetails from './components/cardDetailView/index.js'
 import Profile from './components/profile/index.js'
+import Cart from './components/cart/index.js'
 
 
 
@@ -34,10 +35,10 @@ function App() {
      path:"/productDetail/:id",
      element:<CardDetailView/>
    },   
-  //  {
-  //   path:"/contact",
-  //   element:<Profile/>
-  // }, 
+   {
+    path:"/cart",
+    element:<Cart/>
+  }, 
   {
     path:"/profile",
     element:<Profile/>

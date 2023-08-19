@@ -1,0 +1,36 @@
+
+.cart-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(225,225,225,0.4);
+    padding:5px;
+    border-radius:5px;
+    margin-top: 10px;
+
+}
+.item-image{
+    width:130px;
+}
+.item-description{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.item-name{
+    font-size: 1.5rem;
+}
+.item-brand{
+    font-size: 1rem;
+    color:gray;
+}
+.cart-item-remove{
+    background-color: transparent;
+    border:none;
+    cursor: pointer;
+}
+.cart-item-price{
+    font-family: roboto;
+    font-weight: bold;
+}
