@@ -1,7 +1,27 @@
 import {create} from 'zustand'
 
 export const appStore=create((set)=>({
-    cart:[],
+    cart:[{
+
+        "brand"
+: 
+"LEVIS",
+"id"
+: 
+5,
+"imageUrl"
+: 
+"https://assets.ccbp.in/frontend/react-js/ecommerce/clothes-jeans-pants.png",
+"price"
+: 
+1469,
+"quantity"
+: 
+4,
+"title"
+: 
+"Slim Fit Jeans"
+    }],
     loggedUser:"q@gmail.com",
     getUser:(userMail)=>set({loggedUser:userMail}),
     addCartItem:(item)=>set((state)=>({cart:[...state.cart,item]})),

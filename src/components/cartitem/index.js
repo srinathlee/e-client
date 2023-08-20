@@ -8,6 +8,7 @@ const CartItem=(props)=>{
     const {each}=props
     const{id,title,brand,image,quantity,imageUrl,price}=each
     const onDecrementQuantity = () => {
+      if(quantity>=1)
         itemDecrement(id)
        }
      
@@ -19,13 +20,13 @@ const CartItem=(props)=>{
     
     return(
         <div className='cart-item'>
-                <div className='item-description'>
                  <img className='item-image' src={imageUrl}/> 
+
+                <div className='cart-item-description'> 
                  <div className='item-details'>
                   <h1 className='item-name'>{title}</h1>
                   <p className='item-brand'>by {brand}</p>
                  </div>
-                </div>
               
                 <div className="quantity-container">
                   <button
@@ -45,10 +46,12 @@ const CartItem=(props)=>{
                   </button>
                 </div>
 
-                <div className='cart-price-delete'>
+                 <div className='cart-price-delete'>
                    <p className='cart-item-price'>Rs {price}/-</p>
                    <button onClick={removeItem} className='cart-item-remove'><RxCrossCircled/></button>
-                </div> 
+                 </div> 
+                </div>
+                <button onClick={removeItem} className='cart-item-remove-small'><RxCrossCircled/></button>
               </div>
     )
 }

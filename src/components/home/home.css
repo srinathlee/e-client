@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Crete+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round&family=Lato&family=Poppins&display=swap');
 *{
-    font-family: "roboto";
+    font-family: "poppins"!important;
     margin:0px;
     padding:0px;
     box-sizing: border-box;
@@ -30,11 +30,12 @@
 .home-heading{
     font-size: 3rem;
     margin-bottom: 1em;
+    font-family: "poppins" ;
 }
 .home-description{
     font-size: 1.2rem;
     margin-bottom: .5em;
-    font-family: "roboto";
+    font-family: "lato";
     color:gray;
 }
 .shop-now-button a{
