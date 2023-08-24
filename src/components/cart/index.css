@@ -62,9 +62,9 @@
     justify-content: flex-end;
 }
 
-@media (max-width:570px){
+@media (max-width:670px){
     .cart-main-heading{
-        font-size: 1em;
+        font-size: 2rem;
         /* font-family: ; */
     }   
     .cart-clear-btn{
