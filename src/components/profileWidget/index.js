@@ -13,7 +13,6 @@ const ProfileWidget=(props)=>{
   const wedgetClick=()=>{
     changeTab(id)
   }
-  console.log(children)
 
     return(
         <div onClick={wedgetClick} className={`profile-widget ${selected}`}>

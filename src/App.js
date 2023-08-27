@@ -9,7 +9,7 @@ import CardDetailView from './components/cardDetailView/index.js'
 import ProductItemDetails from './components/cardDetailView/index.js'
 import Profile from './components/profile/index.js'
 import Cart from './components/cart/index.js'
-
+import ContactUsForm from './components/contact/index.js'
 
 
 
@@ -42,6 +42,10 @@ function App() {
   {
     path:"/profile",
     element:<Profile/>
+  },
+  {
+    path:"/contact",
+    element:<ContactUsForm/>
   },
    {
     path:"*",

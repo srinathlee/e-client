@@ -23,24 +23,20 @@ const profileTabs=[
 ]
 
 const Profile=()=>{
-  console.log("tis is profile",<BiLogOut/>)
-    const loggedUser=appStore((state)=>state.loggedUser)
-   const [profile,setProfile]=useState()
-   const[tab,setTab]=useState(1)
+   const loggedUser=appStore((state)=>state.loggedUser)
+   const [userprofile,setProfile]=useState()
+   const [tab,setTab]=useState(1)
+   
     useEffect(()=>{getUserInit()},[])
 
     const getUserInit=async()=>{
         const response= await helpers.getloggerUser(loggedUser)
-        console.log(response.data.profile)
         setProfile(response.data)
       }
    
    const changeTab=(id)=>{
       setTab(id)
-   }
-   
-
-      
+   }        
 
    return(
 <>
@@ -48,12 +44,10 @@ const Profile=()=>{
    <div className='profile-container'>
       <div className='left-container'>
          <div className='profile-image-container'>
-            <label htmlFor='profile-image'><img  className='profile-page-image' src={user_profile}/></label>
-            <input id="profile-image" className='profile-image-input' type="file"/>
-            <FiEdit className='profile-edit-icon'/>
+          <img  className='profile-page-image' src={userprofile?.profile||user_profile}/>  
          </div>
 
-         <p className='user-name-greet'>H!  Anjelah Nicole </p>
+          <p className='user-name-greet'>H!  Anjelah Nicole </p>
  
          {
            profileTabs.map((each)=> <ProfileWidget key={each.id} isActive={tab===each.id} changeTab={changeTab} each={each}>{each.Icon}</ProfileWidget>)
@@ -63,7 +57,7 @@ const Profile=()=>{
           <p >Logout</p>
         </div>
       </div>
-      <ProfileTabView id={tab}/>
+      <ProfileTabView user_data={userprofile} id={tab}/>
         
    </div>
 

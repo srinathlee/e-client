@@ -1,0 +1,182 @@
+.right-container{
+    width:63%;
+    /* max-width: 800px; */
+    /* background-color:#F1F1F1; */
+    border: 2px solid gray;
+    height:62vh;
+    border-radius: 5px;
+    padding:20px;
+}
+.account-profile-imag{
+    height:130px;
+    width:130px;
+    border:4px solid gray;
+    border-radius: 65px;
+}
+.save-acc-button{
+    background-color: black;
+    border-radius: 5px;
+    color:white;
+    padding:8px 1em;
+    outline: none;
+    cursor: pointer;
+    border:none;
+    margin-top: 2em;
+    transition: all 200ms ease;
+}
+.save-acc-button:active{
+    scale: 0.92;
+}
+
+.account-profile-bg{
+    position: relative;
+    margin-bottom: 20px;
+
+}
+.profile-edit-icon{
+    position: absolute;
+    font-size: 30px;
+    bottom: 15px;
+    left: 90px;
+    color:gray;
+    }
+.account-detail-item{
+    /* display: flex;
+    flex-direction: row;
+    align-items: center; */
+   color:black;
+   padding-left: 10px;
+   border:1px solid gray;
+    width:250px;
+    height:40px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+.account-item-detail-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.edit-user-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.account-widget{
+    display: flex;
+    flex-direction: column;
+
+}
+.account-prime-widget{
+  display: flex;
+}
+.account-noprime-widget{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+.prime-acc-label{
+    margin-right: 10px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+}
+.opt-verify-btn{
+    background-color: black;
+    border-radius: 5px;
+    color:white;
+    width:150px;
+    height:40px;
+
+    outline: none;
+    cursor: pointer;
+    border:none;
+    margin-top: 2em;
+    transition: all 200ms ease; 
+}
+.verify-widget{
+    display: flex;
+    flex-direction: column;
+
+}
+.verify-otp{
+    color:black;
+    padding-left: 10px;
+    border:1px solid gray;
+     width:250px;
+     height:40px;
+     border-radius: 6px;
+     margin-bottom: 20px;
+}
+.reset-password-bg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    height:100%;
+}
+.reset-password-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    height:100%;
+}
+.empty-wish-img{
+ width:50%;
+ margin-bottom: 15px;
+}
+.empty-wishliwt-container{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+.empty-wish-para{
+    font-weight: bold;
+}
+.right-container{
+    overflow: scroll;
+}
+body {
+    -ms-overflow-style: none; /* Edge, Internet Explorer */
+    scrollbar-width: none; /* Firefox */
+    overflow-y: scroll;
+}
+.right-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+@media(max-width:400px){
+    .empty-wish-img{
+        width:100%;
+    }
+    .empty-wish-para{
+        font-size: .9rem;
+    }
+    .verify-otp{
+        width: 200px;
+    }
+    .account-detail-item{
+      width:200px;  
+    }
+    .account-profile-imag{
+        height:100px;
+        width:100px;
+     
+    }
+    .profile-edit-icon{
+        position: absolute;
+        font-size: 30px;
+        bottom: 15px;
+        left: 60px;
+        color:gray;
+        }
+        .prime-acc-label{
+           font-size: .8rem;
+        }
+        .acc-label{
+            font-size: .9rem;
+        }
+
+}

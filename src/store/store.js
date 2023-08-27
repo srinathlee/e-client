@@ -1,6 +1,7 @@
 import {create} from 'zustand'
 
 export const appStore=create((set)=>({
+    wishList:[],
     cart:[{
 
         "brand"
@@ -28,5 +29,7 @@ export const appStore=create((set)=>({
     removeCartItem:(id)=>set((state)=>({cart:state.cart.filter((ele)=>ele.id!==id)})),
     itemIncrement:(id=>set((state)=>({cart:state.cart.map((e)=>e.id===id?{...e,quantity:e.quantity+1}:e)}))),
     itemDecrement:(id=>set((state)=>({cart:state.cart.map((e)=>e.id===id?{...e,quantity:e.quantity-1}:e)}))),
-    removeAllItems:()=>set((state)=>({cart:[]}))
+    removeAllItems:()=>set((state)=>({cart:[]})),
+    addWishItem:(item)=>set((state)=>({wishList:[...state.wishList,item]})),
+    removeWishItem:(id)=>set((state)=>({wishList:state.wishList.filter((ele)=>ele.id!==id)}))
 }))

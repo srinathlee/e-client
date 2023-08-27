@@ -1,5 +1,6 @@
 import Cookies from 'js-cookie'
 import {ThreeDots} from 'react-loader-spinner'
+import {AiOutlineHeart,AiFillHeart} from 'react-icons/ai'
 import {BsPlusSquare, BsDashSquare} from 'react-icons/bs'
 import { useEffect ,useState} from 'react'
 import {useParams,Link} from 'react-router-dom'
@@ -16,10 +17,12 @@ const apiStatusConstants = {
 }
 
 const ProductItemDetails =()=> {
-  const {addCartItem,cart,itemIncrement}=appStore((state)=>state)
+  const {removeWishItem}=appStore((state)=>state)
+  const {addCartItem,cart,itemIncrement,wishList,addWishItem}=appStore((state)=>state)
     const {id}=useParams() 
 
     const [state,setState] = useState({
+      isLiked:false,
     quantity:0,
     productData: {},
     apiStatus: apiStatusConstants.initial
@@ -46,7 +49,9 @@ const ProductItemDetails =()=> {
     }
   }
 
+
  
+
  const  renderLoadingView = () => (
     <div className="products-details-loader-container">
       <ThreeDots color="black" height="50" width="50" />
@@ -79,6 +84,9 @@ const ProductItemDetails =()=> {
     console.log(state.quantity)
     
   }
+
+  // _________________________________cart__________________________________________
+
   
   const addToCart=(event)=>{
     const {quantity}=state
@@ -102,9 +110,41 @@ const ProductItemDetails =()=> {
   }
 
 
+  // _________________________________wishlist__________________________________________
+
+
+  const removeWish=()=>{
+
+    removeWishItem(id)
+    setState({...state,
+      isLiked: false,
+    })
+  }
+
+
+
+  const addToWishlist=()=>{
+
+      setState({...state,
+        isLiked: true,
+      })
+    
+    const {id,imageUrl,title,brand,price}=state.productData
+    const wishItem={
+      id,imageUrl,title,brand,price,imageUrl
+     }
+     const itemExist=wishList.find((ele)=>ele.id===id)
+     if(!itemExist)
+     addWishItem(wishItem)
+
+
+  }
+  console.log(wishList)
+
+
 
  const renderProductDetailsView = () =>  {
-        const {productData,quantity} =state
+        const {productData,quantity,isLiked} =state
         const {
           brand,
           imageUrl,
@@ -116,6 +156,9 @@ const ProductItemDetails =()=> {
           <div className="product-details-success-view">
             <div className="product-details-container">
               <img src={imageUrl} alt="product" className="product-image" />
+              {
+                isLiked? <AiFillHeart onClick={removeWish} className='product-wishlist-icon'/>:<AiOutlineHeart onClick={addToWishlist} className='product-wishlist-icon'/>
+              }
               <div className="product">
                 <h1 className="product-name">{title}</h1>
                 <p className="price-details">Rs {price}/-</p>
@@ -127,6 +170,7 @@ const ProductItemDetails =()=> {
                       alt="star"
                       className="star"
                     />
+                    
                   </div>
                   {/* <p className="reviews-count">{totalReviews} Reviews</p> */}
                 </div>
@@ -160,9 +204,15 @@ const ProductItemDetails =()=> {
                 <button onClick={addToCart}
                   type="button"
                   className="button add-to-cart-btn"
-                  // onClick={onClickAddToCart}
                 >
                   ADD TO CART
+                </button>
+
+                <button onClick={addToWishlist}
+                  type="button"
+                  className="button add-to-wishlist-btn"
+                >
+                  ADD TO WISHLIST
                 </button>
               </div>
             
@@ -177,7 +227,7 @@ const ProductItemDetails =()=> {
                 />
               ))}
             </ul> */}
-           <Link to="/products"> <div className='button all-products-btn'>All products</div></Link>
+           <Link to="/products"> <button className='button all-products-btn'>All products</button></Link>
           </div>
         )
       }

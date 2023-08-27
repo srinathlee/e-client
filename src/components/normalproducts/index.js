@@ -83,16 +83,16 @@ const NorProducts=()=>{
                    
                    </div>
                 </div>
-
+         <hr className="prime-normal-line"/>
 
 
                 <div className="normalproducts-bt-container">
                     <h1 className="normalproduct-heading">All Products</h1>
-                     <div className="allproducts-container">
-                     {
-                       getData.productsdata.map((each)=>(<ProductCard each={each} key={each._id}/>))
-                     }
-                     </div>
+                      <div className="allproducts-container">
+                        {
+                         getData.productsdata?.map((each)=>(<ProductCard each={each} key={each._id}/>))
+                        }
+                      </div>
                 </div>
                 
               </div>)

@@ -3,6 +3,8 @@ import {Link,useNavigate} from 'react-router-dom'
 import banner from '../assets/loginbg.png'
 import profile1 from '../assets/registerprofile.png'
 import AOS from 'aos'
+import {FaUserAlt,FaKey} from "react-icons/fa"
+import {GrMail} from 'react-icons/gr'
 import {AiOutlineUser,AiOutlineMail} from 'react-icons/ai'
 import {RiLockPasswordLine} from 'react-icons/ri'
 import {ToastContainer,toast} from 'react-toastify'
@@ -126,7 +128,7 @@ const Register=()=>{
                         <div className='outer-widget'>
                         <div className='widget'>
                          
-                          <i className="fa-regular fa-user widget-icon"></i>
+                         <FaUserAlt className='widget-icon'/>
                           <input onBlur={onBlur} value={name} onChange={setData} name="name" className='input-box' type="text" placeholder='Enter your name'/>
                         </div>
                         {/* {errors.name && <p className='error'>{errors.name}</p>} */}
@@ -135,7 +137,7 @@ const Register=()=>{
                         <div className='outer-widget'>
                         <div  className='widget'>
                       
-                          <i className="fa-regular fa-envelope widget-icon"></i>
+                        <GrMail className='widget-icon'/>
                           <input onBlur={onBlur}  value={email} onChange={setData}  name="email"  className="input-box" type="email" placeholder='Enter your email'/>
                         </div>
                         {/* {errors.mail && <p className='error'>{errors.mail}</p>} */}
@@ -143,7 +145,7 @@ const Register=()=>{
                         
                          <div className='outer-widget'>
                         <div className='widget'>
-                          <i className="fa-solid fa-key widget-icon password'"></i>
+                        <FaKey className='widget-icon'/>
                           <input onBlur={onBlur}  value={password} onChange={setData}  name="password"  className='input-box' type="password" placeholder='Enter your password'/>
                           </div>
                           {/* {errors.password && <p className='error'>{errors.password}</p>} */}
@@ -151,7 +153,7 @@ const Register=()=>{
 
                         <div className='outer-widget'>
                         <div  className='widget'>
-                          <i className="fa-solid fa-key widget-icon password'"></i>
+                        <FaKey className='widget-icon'/>
                           <input  onBlur={onBlur}  value={conpassword}  onChange={setData} name="conpassword"  className='input-box' type="password" placeholder='Conform password'/>
                           </div>
                           {/* {errors.conpassword && <p className='error'>{errors.conpassword}</p>} */}

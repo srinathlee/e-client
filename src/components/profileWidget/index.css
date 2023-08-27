@@ -10,6 +10,9 @@
     gap: 10px;
     margin-bottom: 20px;
 }
+.profile-widget:hover{
+    cursor: pointer;
+}
 .selected{
     border:1px solid black;
 }
